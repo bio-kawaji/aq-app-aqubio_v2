@@ -1,4 +1,5 @@
 import 'package:aqubio/pages/splash_page.dart';
+import 'package:aqubio/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
@@ -15,6 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
+      routes: routeMap,
       home: const SplashPage(),
     );
   }
