@@ -14,3 +14,11 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+## 採用パッケージ
+```
+flutter pub add flutter_hooks hooks_riverpod flutter_blue_plus rsa_encrypt dio shared_preferences freezed freezed_annotation riverpod_annotation
+```
+```
+flutter pub add  dev:riverpod_generator dev:build_runner dev:json_serializable
+```
