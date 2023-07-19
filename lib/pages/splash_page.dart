@@ -35,7 +35,8 @@ class SplashPage extends HookConsumerWidget {
                 : '/login'; // ログイン画面
             await Future.delayed(const Duration(seconds: 1));
 
-            if (context.mounted) {
+            if (context.mounted && ModalRoute.of(context)!.isCurrent) {
+              print('りぷれーす');
               Navigator.pushReplacementNamed(context, RoutePath.top);
             }
           },
@@ -51,10 +52,15 @@ class SplashPage extends HookConsumerWidget {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: const <Widget>[
-            Text(
+          children: <Widget>[
+            const Text(
               'AQUBIO',
             ),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                child: const Text('pop'))
           ],
         ),
       ),

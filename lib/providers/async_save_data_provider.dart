@@ -82,8 +82,9 @@ class AsyncSaveData extends _$AsyncSaveData {
     // 再読み込みはしないほうが望ましいためkeep.
     ref.keepAlive();
     final json = await ref.watch(sharedPreferensAppSaveDataProvider).load();
-
+    print('hson=$json');
     if (json.isEmpty) {
+      print('えんぷてぃです');
       return SaveDataModel();
     }
 
@@ -91,8 +92,25 @@ class AsyncSaveData extends _$AsyncSaveData {
   }
 
   Future<void> save(SaveDataModel save) async {
+    print('新しいセーブ');
+    print(save);
+
     state = const AsyncValue.loading();
     state = await AsyncValue.guard(() async {
+      await ref.watch(sharedPreferensAppSaveDataProvider).save(save);
+
+      final json = await ref.watch(sharedPreferensAppSaveDataProvider).load();
+      print('セーブ直後のロード');
+      print(json);
+
+      return SaveDataModel.fromJson(json);
+    });
+  }
+
+  Future<void> clear() async {
+    state = const AsyncValue.loading();
+    state = await AsyncValue.guard(() async {
+      final save = SaveDataModel();
       await ref.watch(sharedPreferensAppSaveDataProvider).save(save);
       return save;
     });

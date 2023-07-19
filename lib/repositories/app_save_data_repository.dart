@@ -25,6 +25,8 @@ class SharedPreferensAppSaveDataRepogitory extends AppSaveDataRepogitory {
   Future<Map<String, dynamic>> load() async {
     final pref = await SharedPreferences.getInstance();
     final jsonText = pref.getString(_endPoint);
+    print('しぇあーどぷりふぁれんす:ロード:$_endPoint');
+    print(jsonText);
     if (jsonText == null) {
       return {};
     }
@@ -35,7 +37,11 @@ class SharedPreferensAppSaveDataRepogitory extends AppSaveDataRepogitory {
   @override
   Future<void> save(dynamic jsonMap) async {
     final pref = await SharedPreferences.getInstance();
-    pref.setString(_endPoint, json.encode(jsonMap));
+    final jsonText = json.encode(jsonMap);
+    print('しぇあーどぷりふぁれんす:セーブ:$_endPoint');
+    print(jsonText);
+
+    pref.setString(_endPoint, jsonText);
   }
 }
 

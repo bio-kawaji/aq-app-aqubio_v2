@@ -6,7 +6,7 @@ part of 'async_save_data_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$asyncSaveDataHash() => r'880814ba45a3dae5fad1d5b7eeca08f66547dddb';
+String _$asyncSaveDataHash() => r'ec58764dfbcd8dafbe13d529fd41202bfc98999f';
 
 /// 非同期にセーブデータを読み込む。<br>
 /// ---
