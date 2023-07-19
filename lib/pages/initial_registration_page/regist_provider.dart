@@ -15,9 +15,7 @@ part 'regist_provider.g.dart';
 class Regist extends _$Regist {
   @override
   RegistViewModel build() {
-    print('びるど！');
     return RegistViewModel(
-      // aaaaaaaaaaaaa
       pageIndex: ref.watch(
           asyncSaveDataProvider.select((value) => value.value?.pageIndex ?? 1)),
       isFirstBoot: ref.watch(asyncSaveDataProvider

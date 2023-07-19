@@ -36,7 +36,6 @@ class SplashPage extends HookConsumerWidget {
             await Future.delayed(const Duration(seconds: 1));
 
             if (context.mounted && ModalRoute.of(context)!.isCurrent) {
-              print('りぷれーす');
               Navigator.pushReplacementNamed(context, RoutePath.top);
             }
           },
